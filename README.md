@@ -6,15 +6,19 @@ This web application can be used to better track your daily work schedule. It ca
 
 ## Installation
 
-[DeployedWebpage](https://josh4got.github.io/Password-Generator/)
+[DeployedWebpage](https://josh4got.github.io/Daily-Work-Planner/)
 
-![Webpage](./Assets/Webpage.jpeg)
+![Webpage](./assets/images/Deployed%20work%20day%20scheduler.PNG)
 
 ## Usage
 
 To use this web application a user can see the current date at the top of the page. the user can use the color coded schedule to determine which timeblocks are past, current, or upcoming.
 
+![colorcoded](./assets/images/color%20coded.PNG)
+
 The user can type and save hourly agenda items into the schedule. Saving the items will allow them to carry over when the application is refreshed.
+
+![save-schedule-items](./assets/images/Type%20Agenda.jpeg)
 
 ## Credits
 
