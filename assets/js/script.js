@@ -1,10 +1,8 @@
 let saveBtnEl = $(".saveBtn");
 let today = dayjs();
 let timeblocks = $(".time-block");
-console.log(timeblocks);
 // Applies todays date to top of page
 $("#currentDay").text(today.format("MMM D, YYYY"));
-console.log(today.format("MMM D, YYYY"));
 // Allows DOM to render before interacting with it
 $(document).ready(function () {
   // Locally store the id and text as key/value when button is pressed
