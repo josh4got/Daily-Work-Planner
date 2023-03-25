@@ -2,19 +2,19 @@ let saveBtnEl = $(".saveBtn");
 let today = dayjs();
 let timeblocks = $(".time-block");
 console.log(timeblocks);
+// Applies todays date to top of page
 $("#currentDay").text(today.format("MMM D, YYYY"));
 console.log(today.format("MMM D, YYYY"));
-
+// Allows DOM to render before interacting with it
 $(document).ready(function () {
-  console.log("ready");
-  // when save btn clicked locally store the id and text as key/value
+  // Locally store the id and text as key/value when button is pressed
   saveBtnEl.on("click", function () {
     localStorage.setItem(
       $(this).parent().attr("id"),
       $(this).siblings(".description").val()
     );
   });
-  // sets text of box to locally stored value selected by id
+  // Displays text from locally value of locally stored item
   $("#08 .description").val(localStorage.getItem("08"));
   $("#09 .description").val(localStorage.getItem("09"));
   $("#10 .description").val(localStorage.getItem("10"));
@@ -25,13 +25,12 @@ $(document).ready(function () {
   $("#15 .description").val(localStorage.getItem("15"));
   $("#16 .description").val(localStorage.getItem("16"));
   $("#17 .description").val(localStorage.getItem("17"));
+  // Removes existing class and applies correct class based on the hour
+  for (var i = 0; i < timeblocks.length; i++) {
+    $(timeblocks[i]).removeClass("past present future");
+    if (timeblocks[i].id < today.format("H")) $(timeblocks[i]).addClass("past");
+    else if (timeblocks[i].id > today.format("H"))
+      $(timeblocks[i]).addClass("future");
+    else $(timeblocks[i]).addClass("present");
+  }
 });
-
-// remove existing classes from timeblocks & apply new classes based on current time
-for (var i = 0; i < timeblocks.length; i++) {
-  $(timeblocks[i]).removeClass("past present future");
-  if (timeblocks[i].id < today.format("H")) $(timeblocks[i]).addClass("past");
-  else if (timeblocks[i].id > today.format("H"))
-    $(timeblocks[i]).addClass("future");
-  else $(timeblocks[i]).addClass("present");
-}
